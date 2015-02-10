@@ -17,11 +17,7 @@ ActiveRecord::Schema.define(version: 20150210090211) do
     t.integer  "user_id"
     t.string   "twitter"
     t.string   "github"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "registrations", force: true do |t|
+    t.string   "profile_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150210090211) do
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "profile_status"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

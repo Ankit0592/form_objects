@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
     	t.integer :user_id
     	t.string :twitter
     	t.string :github
+    	t.string :profile_status
       t.timestamps
     end
   end

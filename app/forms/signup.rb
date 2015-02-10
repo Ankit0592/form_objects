@@ -21,6 +21,7 @@ class Signup
         hash = {}        
         hash[:email] = "#{email}"
         @user ||= User.new(hash)
+        @user.status
         @user.save!
     end
 
@@ -29,6 +30,7 @@ class Signup
         hash[:twitter] = "#{twitter}"
         hash[:github] = "#{github}"
         @profile = Profile.new(hash)
+        @profile.status
         @user.profile = @profile
     end
 end  
