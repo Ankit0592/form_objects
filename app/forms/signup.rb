@@ -11,10 +11,7 @@ class Signup
     def register
         if valid?
             create_user
-            create_profile
-        else
-            byebug
-         false    
+            create_profile 
         end
     end
 
