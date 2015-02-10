@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+respond_to :html
 
-  def index
-    @users = User.all
-  end
-
-  def show
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to :back, :alert => "Access denied."
+ def new
+    @signup_form = Signup.new
     end
-  end
 
-end
+    def create
+    @signup = Signup.new(signup_params)
+    @signup.register
+    respond_with @signup_form, location: root_path
+    end
+
+    private
+    def signup_params
+    params.require(:signup).permit(:email, :github, :twitter)
+    end
+    end
+

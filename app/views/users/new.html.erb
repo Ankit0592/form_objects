@@ -1,9 +1,10 @@
-<%= form_for(@signup) do |f| %>  
-    <% if @signup.errors.any? %>
+
+<%= form_for @signup_form, url: users_path do |f| %>  
+    <% if @signup_form.errors.any? %>
     <div id="error_explanation">
     <h2><%= pluralize(@signup.errors.count, "error") %> prohibited this user from being saved:</h2>
     <ul>
-    <ul><% @signup.errors.full_messages.each do |message| %>
+    <ul><% @signup_form.errors.full_messages.each do |message| %>
         <li><%= message %></li>
     </ul>
     </ul>
@@ -11,9 +12,7 @@
 
     </div>
     <% end %>
-    <div class="field"><%= f.label :username %>
-
-    <%= f.text_field :username %></div>
+    
     <div class="field"><%= f.label :email %>
 
     <%= f.text_field :email %></div>
