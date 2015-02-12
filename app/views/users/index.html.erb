@@ -4,11 +4,11 @@
     <div class="column">
       <table class="table">
         <tbody>
-          <% @users.each do |user| %>
             <tr>
-              <%= render user %>
-            </tr>
-          <% end %>
+              <%if @users_decorator.email_present.present? %>
+               <td> Email Present </td>
+              <%end%>
+            </tr>     
         </tbody>
       </table>
     </div>

@@ -12,6 +12,8 @@ module Previewable
   end
 
   def index
+    byebug
+  	@users=UserDecorator.all
   end	
 
   private
